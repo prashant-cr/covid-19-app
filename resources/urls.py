@@ -5,6 +5,7 @@ from models.admin_model import ModelView
 from models.users import User
 from resources.login import Login, Refresh
 from resources.sign_up import SignUp
+from resources.covid import CovidData
 
 
 def restful_api(app):
@@ -12,6 +13,7 @@ def restful_api(app):
     api.add_resource(SignUp, '/signup', strict_slashes=False)
     api.add_resource(Login, '/login', strict_slashes=False)
     api.add_resource(Refresh, '/refresh', strict_slashes=False)
+    api.add_resource(CovidData, '/covid', strict_slashes=False)
 
     # admin
     admin = Admin(app, template_mode='bootstrap3')
