@@ -19,6 +19,8 @@ This is Covid-19 Backend app for getting covid-19 data.
 8. We are done with the pre steps for the setting up the project now run the following 
    command to start the application.
 ```python app.py```
+9. To send the mail report you will need to add the username and password in the config.
+   And also enable the less secure app enable in your google account.
 
 ## Api Details
 1. Login API (POST)
