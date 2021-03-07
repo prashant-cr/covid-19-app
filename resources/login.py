@@ -4,6 +4,7 @@ from marshmallow import Schema, fields as field
 from webargs.flaskparser import use_kwargs
 from functionality.login import validate_user
 from resources.base_resources import BaseResource
+from utils.resource_exceptions import handle_exceptions
 
 
 class LoginRequestFormat(Schema):
@@ -30,7 +31,7 @@ class Login(BaseResource):
 
 
 class Refresh(BaseResource):
-    decorators = BaseResource.decorators
+    decorators = BaseResource.decorators + [handle_exceptions]
 
     @marshal_with(login_response_format)
     def get(self):

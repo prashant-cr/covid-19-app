@@ -7,6 +7,7 @@ from webargs.flaskparser import use_kwargs
 from functionality.users import create_user
 from models import session
 from resources.base_resources import BaseResource
+from utils.resource_exceptions import handle_exceptions
 
 
 class SignUpRequestFormat(Schema):
@@ -28,6 +29,8 @@ sign_up_response_format = dict(
 
 
 class SignUp(BaseResource):
+
+    decorators = [handle_exceptions]
 
     @marshal_with(sign_up_response_format)
     @use_kwargs(SignUpRequestFormat)
