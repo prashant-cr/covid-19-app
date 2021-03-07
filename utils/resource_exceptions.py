@@ -21,7 +21,7 @@ def handle_exceptions(fn):
             session.rollback()
             return abort(400, message=str(key_err))
         except IOError as io_err:
-            app.logger.error()
+            app.logger.error(io_err)
             session.rollback()
             return abort(500, message=str(io_err))
         except IntegrityError as err:

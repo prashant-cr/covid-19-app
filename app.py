@@ -20,12 +20,12 @@ def create_app():
     session = get_session(database_url=database_url)
 
     # flask basic auth for admin
-    auth = flask_admin_auth(app)
+    flask_admin_auth(app)
 
     # logger configuration
     config_logger(app)
     restful_api(app)
-    jwt_extended_mobile = JWTManager(app)
+    JWTManager(app)
 
     # teardown database session
     def close_session(response_or_exc):
