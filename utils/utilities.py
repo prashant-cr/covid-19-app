@@ -17,7 +17,7 @@ def flask_admin_auth(app):
 def get_current_jwt_identity(fn):
 
     @wraps(fn)
-    @jwt_required
+    @jwt_required()
     def wrapper(*args, **kwargs):
         current_user_id = get_jwt_identity()
         return fn(current_user_id, *args, **kwargs)

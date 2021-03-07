@@ -43,6 +43,6 @@ def handle_exceptions(fn):
         except Exception as exc:
             app.logger.error(exc)
             session.rollback()
-            return abort(500, message=exc.message)
+            return abort(500, message=str(exc))
 
     return wrapper

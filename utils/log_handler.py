@@ -4,7 +4,7 @@ from flask import current_app as app
 
 def function_logger(func):
     @wraps(func)
-    def function_log(*args,     **kwargs):
+    def function_log(*args, **kwargs):
         app.logger.debug(
             "Inside Function {} with parameters: {},{}".format(
                 func.__name__,
