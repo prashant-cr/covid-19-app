@@ -90,7 +90,7 @@ def send_covid_mail_with_graph(current_identity, **kwargs):
             output_type='file', image_width=800, image_height=600,
             filename='covid-data.html', validate=False)
     send_mail()
-    return True
+    return dict(Message="Report Sent")
 
 
 
